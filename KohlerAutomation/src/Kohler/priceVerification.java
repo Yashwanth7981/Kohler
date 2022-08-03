@@ -168,25 +168,27 @@ public class priceVerification {
 					r.createCell(3).setCellValue(price);
 					wb.write(fos);
 					driver.quit();
-				} else if (excelValue.contains("-0")) {
-					driver.findElement(
-							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_0?$SwatchSS$']"))
-							.click();
-					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
-					FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
-					r.createCell(3).setCellValue(price);
-					wb.write(fos);
-					driver.quit();
-				} else if (excelValue.contains("-7")) {
-					driver.findElement(
-							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_7?$SwatchSS$']"))
-							.click();
-					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
-					FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
-					r.createCell(3).setCellValue(price);
-					wb.write(fos);
-					driver.quit();
-				}
+				} 
+//				else if (excelValue.contains("-0")) {
+//					driver.findElement(
+//							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_0?$SwatchSS$']"))
+//							.click();
+//					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+//					FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
+//					r.createCell(3).setCellValue(price);
+//					wb.write(fos);
+//					driver.quit();
+//				}
+//				else if (excelValue.contains("-7")) {
+//					driver.findElement(
+//							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_7?$SwatchSS$']"))
+//							.click();
+//					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+//					FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
+//					r.createCell(3).setCellValue(price);
+//					wb.write(fos);
+//					driver.quit();
+//				}
 				else {
 					FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
 					r.createCell(3).setCellValue("No Colour Match Found");
