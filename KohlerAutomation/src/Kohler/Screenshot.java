@@ -9,13 +9,13 @@ import com.google.common.io.Files;
 
 public class Screenshot {
 	public static void main(String[] args) throws Throwable {
-		System.setProperty("webdriver.chrome.driver", "./Driver2/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
 		ChromeDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://youngsoft.com/solutions/devops/");
 		String loginTitle = driver.getTitle();
-		// System.out.println(loginTitle);
-		String expectedUrl = "https://youngsoft.com/solutions/devops/";
+		 System.out.println(loginTitle);
+		String expectedUrl = "DevOps";
 		if (loginTitle.equalsIgnoreCase(expectedUrl)) {
 			System.out.println("Test passed");
 		} else {
@@ -25,6 +25,5 @@ public class Screenshot {
 			Files.copy(Src, Dest);
 			System.out.println("Screenshot Taken");
 		}
-
 	}
 }

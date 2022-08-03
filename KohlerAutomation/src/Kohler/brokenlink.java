@@ -6,6 +6,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,9 +15,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class brokenlink {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Throwable {
 
-		String homePage = "https://youngsoft.in/";
+		String homePage = "https://www.youngsoft.in";
 		String url = "";
 		HttpURLConnection huc = null;
 		int respCode = 200;
@@ -26,6 +27,10 @@ public class brokenlink {
 		driver = new ChromeDriver();
 
 		driver.get(homePage);
+		driver.manage().window().maximize();
+		Thread.sleep(5000);
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		driver.findElement(By.xpath("//button[@class='windowclose']")).click();
 
 		List<WebElement> links = driver.findElements(By.tagName("a"));
 
@@ -42,10 +47,10 @@ public class brokenlink {
 				continue;
 			}
 
-			if (!url.startsWith(homePage)) {
-				System.out.println("URL belongs to another domain, skipping it.");
-				continue;
-			}
+//			if (!url.startsWith(homePage)) {
+//				System.out.println("URL belongs to another domain, skipping it.");
+//				continue;
+//			}
 
 			try {
 				huc = (HttpURLConnection) (new URL(url).openConnection());
@@ -61,12 +66,9 @@ public class brokenlink {
 				} else {
 					System.out.println(url + " is a valid link");
 				}
-
 			} catch (MalformedURLException e) {
-
 				e.printStackTrace();
 			} catch (IOException e) {
-
 				e.printStackTrace();
 			}
 		}

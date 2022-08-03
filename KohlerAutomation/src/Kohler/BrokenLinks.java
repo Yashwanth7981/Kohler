@@ -41,8 +41,6 @@ public class BrokenLinks {
 			  System.out.println(url +" - "+" is Valid link");
 		  }
 		  
-		  }
-		  
-		
+		  }		  
 	}
 }

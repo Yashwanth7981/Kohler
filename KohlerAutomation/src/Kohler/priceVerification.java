@@ -32,7 +32,6 @@ public class priceVerification {
 		Assert.assertEquals(x, "Kohler Faucets, Bathroom Sinks, Toilets, Showering | Kohler");
 		driver.quit();
 	}
-
 	@Test(priority = 2,enabled=true)	
 	public void Price() throws Throwable {
 		for (int i = 1; i <= 3; i++) {
@@ -76,7 +75,6 @@ public class priceVerification {
 				String child = it.next();
 				driver.switchTo().window(parent);
 				driver.switchTo().window(child);
-
 //			-------------------------------------------------------------------
 				if (excelValue.contains("BL")) {
 					driver.findElement(
