@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-08-03T12:44:58 IST" name="Default suite" finished-at="2022-08-03T12:46:25 IST" duration-ms="87042">
+    <groups>
+    </groups>
+    <test started-at="2022-08-03T12:44:58 IST" name="Default test" finished-at="2022-08-03T12:46:25 IST" duration-ms="87042">
+      <class name="Kohler.priceVerification">
+        <test-method signature="verify()[pri:1, instance:Kohler.priceVerification@482bce4f]" started-at="2022-08-03T12:44:58 IST" name="verify" finished-at="2022-08-03T12:45:09 IST" duration-ms="10425" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify -->
+        <test-method signature="Price()[pri:2, instance:Kohler.priceVerification@482bce4f]" started-at="2022-08-03T12:45:09 IST" name="Price" finished-at="2022-08-03T12:46:25 IST" duration-ms="76548" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Price -->
+      </class> <!-- Kohler.priceVerification -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
