@@ -12,7 +12,7 @@ public class Screenshot {
 		System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
 		ChromeDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://youngsoft.com/solutions/devops/");
+		driver.get("https://youngsoft.in/solutions/devops/");
 		String loginTitle = driver.getTitle();
 		 System.out.println(loginTitle);
 		String expectedUrl = "DevOps";
