@@ -21,7 +21,7 @@ public class Screenshot {
 		} else {
 			TakesScreenshot SS = (TakesScreenshot) driver;
 			File Src = SS.getScreenshotAs(OutputType.FILE);
-			File Dest = new File("C:\\ScreenShot Selenium\\DevSS.jpg");
+			File Dest = new File("C:\\ScreenShot Selenium\\Ss1.jpg");
 			Files.copy(Src, Dest);
 			System.out.println("Screenshot Taken");
 		}

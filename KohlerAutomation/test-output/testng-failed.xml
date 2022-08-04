@@ -5,7 +5,6 @@
     <classes>
       <class name="Kohler.priceVerification">
         <methods>
-          <include name="Price"/>
           <include name="verify"/>
         </methods>
       </class> <!-- Kohler.priceVerification -->

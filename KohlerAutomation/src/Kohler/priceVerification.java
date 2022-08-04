@@ -24,15 +24,30 @@ import org.testng.annotations.Test;
 public class priceVerification {
 
 	@Test(priority = 1,enabled=true)
-	public void verify() {
+//	Kohler Home page Verification
+	public void verify() throws Throwable {
 		System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.get("http://kohler.co.in/");
 		String x = driver.getTitle();
 		Assert.assertEquals(x, "Kohler Faucets, Bathroom Sinks, Toilets, Showering | Kohler");
+		System.out.println("Home Page Verified");
+		Thread.sleep(3000);
+// Shop Kohler Verification	
+		driver.findElement(By.xpath("//img[@src='/binaries/content/gallery/plumbingkohlerenin/promo-images/shopify.jpg']")).click();
+		Set<String> st = driver.getWindowHandles();
+		Iterator<String> it = st.iterator();
+		String parent = it.next();
+		String child = it.next();
+		driver.switchTo().window(parent);
+		driver.switchTo().window(child);
+		String Y=driver.getTitle();
+		Assert.assertEquals(Y,"Kohler Online Store, Test Passed");
+		System.out.println("Shop Kohler Verified,Test Passed");	
 		driver.quit();
 	}
-	@Test(priority = 2,enabled=true)	
+	@Test(priority = 2,enabled=false)	
+//	Price Validation
 	public void Price() throws Throwable {
 		for (int i = 1; i <= 5; i++) {
 			FileInputStream fis = new FileInputStream("./Data/Cost.xlsx");
