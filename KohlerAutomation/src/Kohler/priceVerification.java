@@ -37,6 +37,7 @@ public class priceVerification {
 // Shop Kohler Verification	& Login
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,500)");
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//img[@src='/binaries/content/gallery/plumbingkohlerenin/promo-images/shopify.jpg']")).click();
 		Set<String> st = driver.getWindowHandles();
 		Iterator<String> it = st.iterator();

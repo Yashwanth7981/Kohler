@@ -15,7 +15,7 @@ public class Screenshot {
 		driver.get("https://youngsoft.in/solutions/devops/");
 		String loginTitle = driver.getTitle();
 		 System.out.println(loginTitle);
-		String expectedUrl = "DevOps";
+		String expectedUrl = "DevOpsvghj";
 		if (loginTitle.equalsIgnoreCase(expectedUrl)) {
 			System.out.println("Test passed");
 		} else {
