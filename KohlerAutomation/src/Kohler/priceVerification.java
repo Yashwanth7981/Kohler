@@ -29,11 +29,14 @@ public class priceVerification {
 		System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.get("http://kohler.co.in/");
+		driver.manage().window().maximize();
 		String x = driver.getTitle();
 		Assert.assertEquals(x, "Kohler Faucets, Bathroom Sinks, Toilets, Showering | Kohler");
-		System.out.println("Home Page Verified");
+		System.out.println("Home Page Verified, Test Passed");
 		Thread.sleep(3000);
-// Shop Kohler Verification	
+// Shop Kohler Verification	& Login
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,500)");
 		driver.findElement(By.xpath("//img[@src='/binaries/content/gallery/plumbingkohlerenin/promo-images/shopify.jpg']")).click();
 		Set<String> st = driver.getWindowHandles();
 		Iterator<String> it = st.iterator();
@@ -42,11 +45,15 @@ public class priceVerification {
 		driver.switchTo().window(parent);
 		driver.switchTo().window(child);
 		String Y=driver.getTitle();
-		Assert.assertEquals(Y,"Kohler Online Store, Test Passed");
+		Assert.assertEquals(Y,"Kohler Online Store");
 		System.out.println("Shop Kohler Verified,Test Passed");	
+		driver.findElement(By.xpath("//a[@class='Header__Icon Icon-Wrapper Icon-Wrapper--clickable account-icon']")).click();
+		driver.findElement(By.xpath("//input[@name='customer[email]']")).sendKeys("yashwanth.b@youngsoft.in");
+		driver.findElement(By.xpath("//input[@name='customer[password]']")).sendKeys("Yash@ritwik123");
+		System.out.println("Logged In Succesfull, Test Passed");
 		driver.quit();
 	}
-	@Test(priority = 2,enabled=false)	
+	@Test(priority = 2,enabled=true)	
 //	Price Validation
 	public void Price() throws Throwable {
 		for (int i = 1; i <= 5; i++) {
