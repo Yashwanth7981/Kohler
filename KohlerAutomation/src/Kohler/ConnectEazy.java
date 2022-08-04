@@ -17,14 +17,13 @@ public class ConnectEazy {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//input[@name='pw']")).sendKeys("Yash@ritwik123");
 		driver.findElement(By.xpath("//input[@name='Login']")).click();
-		Thread.sleep(4000);
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("//a[@class='small mt8 ib']")).click();
-		Thread.sleep(4000);
+		Thread.sleep(3000);
 		driver.findElement(By.id("sem1")).click();
 		driver.findElement(By.id("save")).click();
 		Thread.sleep(15000);
 		driver.findElement(By.xpath("//input[@class='button primary wide mt8 mb16']")).click();
-	    
 //		Thread.sleep(5000);
 //		Alert alert = driver.switchTo().alert();
 //		String alertMessage = driver.switchTo().alert().getText();

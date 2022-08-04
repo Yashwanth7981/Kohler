@@ -49,8 +49,9 @@ public class priceVerification {
 		System.out.println("Shop Kohler Verified,Test Passed");	
 		driver.findElement(By.xpath("//a[@class='Header__Icon Icon-Wrapper Icon-Wrapper--clickable account-icon']")).click();
 		driver.findElement(By.xpath("//input[@name='customer[email]']")).sendKeys("yashwanth.b@youngsoft.in");
-		driver.findElement(By.xpath("//input[@name='customer[password]']")).sendKeys("Yash@ritwik123");
-		System.out.println("Logged In Succesfull, Test Passed");
+		driver.findElement(By.xpath("//input[@name='customer[password]']")).sendKeys("Yash@ritwik123");		
+		System.out.println("Logged In Succesfully, Test Passed");
+		Thread.sleep(4000);
 		driver.quit();
 	}
 	@Test(priority = 2,enabled=true)	
