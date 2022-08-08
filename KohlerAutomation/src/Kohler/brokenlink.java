@@ -22,9 +22,9 @@ public class brokenlink {
 		HttpURLConnection huc = null;
 		int respCode = 200;
 
-		WebDriver driver;
+		WebDriver driver=new ChromeDriver();
 		System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
-		driver = new ChromeDriver();
+		
 
 		driver.get(homePage);
 		driver.manage().window().maximize();

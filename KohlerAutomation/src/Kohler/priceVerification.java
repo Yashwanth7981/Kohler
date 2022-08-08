@@ -18,44 +18,10 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class priceVerification {
-
-	@Test(priority = 1,enabled=true)
-//	Kohler Home page Verification
-	public void verify() throws Throwable {
-		System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
-		driver.get("http://kohler.co.in/");
-		driver.manage().window().maximize();
-		String x = driver.getTitle();
-		Assert.assertEquals(x, "Kohler Faucets, Bathroom Sinks, Toilets, Showering | Kohler");
-		System.out.println("Home Page Verified, Test Passed");
-		Thread.sleep(3000);
-// Shop Kohler Verification	& Login
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,500)");
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//img[@src='/binaries/content/gallery/plumbingkohlerenin/promo-images/shopify.jpg']")).click();
-		Set<String> st = driver.getWindowHandles();
-		Iterator<String> it = st.iterator();
-		String parent = it.next();
-		String child = it.next();
-		driver.switchTo().window(parent);
-		driver.switchTo().window(child);
-		String Y=driver.getTitle();
-		Assert.assertEquals(Y,"Kohler Online Store");
-		System.out.println("Shop Kohler Verified,Test Passed");	
-		driver.findElement(By.xpath("//a[@class='Header__Icon Icon-Wrapper Icon-Wrapper--clickable account-icon']")).click();
-		driver.findElement(By.xpath("//input[@name='customer[email]']")).sendKeys("yashwanth.b@youngsoft.in");
-		driver.findElement(By.xpath("//input[@name='customer[password]']")).sendKeys("Yash@ritwik123");		
-		System.out.println("Logged In Succesfully, Test Passed");
-		Thread.sleep(4000);
-		driver.quit();
-	}
-	@Test(priority = 2,enabled=true)	
+@Test(priority = 1,enabled=true)	
 //	Price Validation
 	public void Price() throws Throwable {
 		for (int i = 1; i <= 5; i++) {
@@ -88,6 +54,7 @@ public class priceVerification {
 				r.createCell(3).setCellValue("Product Not Found");
 				wb.write(fos);
 				driver.quit();
+				
 
 			} else if (b.size() > 0) {
 				JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -109,6 +76,7 @@ public class priceVerification {
 					r.createCell(3).setCellValue(price);
 					wb.write(fos);
 					driver.quit();
+					
 				} else if (excelValue.contains("BV")) {
 					driver.findElement(
 							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_BV?$SwatchSS$']"))
@@ -118,6 +86,7 @@ public class priceVerification {
 					r.createCell(3).setCellValue(price);
 					wb.write(fos);
 					driver.quit();
+					
 				} else if (excelValue.contains("RGD")) {
 					driver.findElement(
 							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_RGD?$SwatchSS$']"))
@@ -127,6 +96,7 @@ public class priceVerification {
 					r.createCell(3).setCellValue(price);
 					wb.write(fos);
 					driver.quit();
+					
 				} else if (excelValue.contains("AF")) {
 					driver.findElement(
 							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_AF?$SwatchSS$']"))
@@ -136,6 +106,7 @@ public class priceVerification {
 					r.createCell(3).setCellValue(price);
 					wb.write(fos);
 					driver.quit();
+				
 				} else if (excelValue.contains("CP")) {
 					driver.findElement(
 							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_CP?$SwatchSS$']"))
@@ -145,6 +116,7 @@ public class priceVerification {
 					r.createCell(3).setCellValue(price);
 					wb.write(fos);
 					driver.quit();
+				
 				} else if (excelValue.contains("NA")) {
 					driver.findElement(
 							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_NA?$SwatchSS$']"))
@@ -191,26 +163,26 @@ public class priceVerification {
 					wb.write(fos);
 					driver.quit();
 				} 
-//				else if (excelValue.contains("-0")) {
-//					driver.findElement(
-//							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_0?$SwatchSS$']"))
-//							.click();
-//					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
-//					FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
-//					r.createCell(3).setCellValue(price);
-//					wb.write(fos);
-//					driver.quit();
-//				}
-//				else if (excelValue.contains("-7")) {
-//					driver.findElement(
-//							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_7?$SwatchSS$']"))
-//							.click();
-//					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
-//					FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
-//					r.createCell(3).setCellValue(price);
-//					wb.write(fos);
-//					driver.quit();
-//				}
+				else if (excelValue.contains("-0")) {
+					driver.findElement(
+							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_0?$SwatchSS$']"))
+							.click();
+					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+					FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
+					r.createCell(3).setCellValue(price);
+					wb.write(fos);
+					driver.quit();
+				}
+				else if (excelValue.contains("-7")) {
+					driver.findElement(
+							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_7?$SwatchSS$']"))
+							.click();
+					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+					FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
+					r.createCell(3).setCellValue(price);
+					wb.write(fos);
+					driver.quit();
+				}
 				else {
 					FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
 					r.createCell(3).setCellValue("No Colour Match Found");
