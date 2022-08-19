@@ -17,7 +17,7 @@ public class brokenlink {
 
 	public static void main(String[] args) throws Throwable {
 
-		String homePage = "https://www.kohler.co.in";
+		String homePage = "https://ptmantra.com/";
 		String url = "";
 		HttpURLConnection huc = null;
 		int respCode = 200;
@@ -27,10 +27,7 @@ public class brokenlink {
 		
 		driver.get(homePage);
 		driver.manage().window().maximize();
-		Thread.sleep(5000);
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-//		driver.findElement(By.xpath("//button[@class='windowclose']")).click();
-
 		List<WebElement> links = driver.findElements(By.tagName("a"));
 
 		Iterator<WebElement> it = links.iterator();

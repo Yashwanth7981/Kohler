@@ -4,51 +4,37 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
 
 public class VerifyLinks {
-    public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver","./Driver/chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("https://youngsoft.in/");
+	public static void main(String[] args) throws IOException, Throwable {
+		System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://youngsoft.in/");
 
-        List<WebElement> links = driver.findElements(By.tagName("a"));
+		List<WebElement> links = driver.findElements(By.tagName("a"));
 
-        System.out.println("No of links are "+ links.size());  
-      
-        for(int i=0;i<links.size();i++)
-        {
-            WebElement E1= links.get(i);
-            String url= E1.getAttribute("href");
-            verifyLinks(url);
-        }
-        
-        driver.quit();
-    }
-    
-    
-    public static void verifyLinks(String linkUrl)
-    {
-        try
-        {
-            URL url = new URL(linkUrl);
+		System.out.println("No of links are " + links.size());
 
-           
-            HttpURLConnection httpURLConnect=(HttpURLConnection)url.openConnection();
-            httpURLConnect.setConnectTimeout(5000);
-            httpURLConnect.connect();
-            if(httpURLConnect.getResponseCode()>=400)
-            {
-            	System.out.println(linkUrl+" - "+httpURLConnect.getResponseMessage()+"is a broken link");
-            }    
-       
-            else{
-                System.out.println(linkUrl+" - "+httpURLConnect.getResponseMessage());
-            }
-        }catch (Exception e) {
-      }
-   }
+		for (int i = 0; i < links.size(); i++) {
+			WebElement ele = links.get(i);
+			String url = ele.getAttribute("href");
+			URL link = new URL(url);
+			HttpURLConnection HUC = (HttpURLConnection) link.openConnection();
+			Thread.sleep(2000);
+			HUC.connect();
+			int respCode = HUC.getResponseCode();
+			if (respCode >= 400) {
+				System.out.println(url + " - " + "is a Broken Link");
+
+			} else {
+				System.out.println(url + " - " + "is a Valid Link");
+			}
+		}
+	}
 }
