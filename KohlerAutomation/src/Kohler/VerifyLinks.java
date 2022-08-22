@@ -15,7 +15,7 @@ public class VerifyLinks {
 		System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://youngsoft.in/");
+		driver.get("https://youngsoft.in");
 
 		List<WebElement> links = driver.findElements(By.tagName("a"));
 
@@ -32,7 +32,11 @@ public class VerifyLinks {
 			if (respCode >= 400) {
 				System.out.println(url + " - " + "is a Broken Link");
 
-			} else {
+			} 
+			else if (url == null || url.isEmpty()) {
+				System.out.println("URL not configured with anchor tag");
+				continue;
+			}else {
 				System.out.println(url + " - " + "is a Valid Link");
 			}
 		}
