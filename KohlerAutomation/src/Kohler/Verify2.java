@@ -34,7 +34,6 @@ public class Verify2 {
 				System.out.println(url + "--" + "URL not configured with anchor tag");
 				continue;
 			}
-
 			try {
 				huc = (HttpURLConnection) (new URL(url).openConnection());
 				huc.setRequestMethod("HEAD");
