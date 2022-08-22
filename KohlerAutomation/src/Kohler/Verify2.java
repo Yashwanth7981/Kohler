@@ -16,7 +16,7 @@ public class Verify2 {
 
 	public static void main(String[] args) throws Throwable {
 
-		String homePage = "http://kohler.co.in/";
+		String homePage = "https://www.aaa.com/International/";
 		String url = "";
 		HttpURLConnection huc = null;
 		int respCode = 200;
@@ -31,7 +31,7 @@ public class Verify2 {
 			url = it.next().getAttribute("href");
 //			System.out.println(url);
 			if (url == null || url.isEmpty()) {
-				System.out.println(url + "--" + "URL not configured with anchor tag");
+				System.out.println(url + "--" + "URL is not configured with anchor tag");
 				continue;
 			}
 			try {
