@@ -16,7 +16,7 @@ public class Verify2 {
 
 	public static void main(String[] args) throws Throwable {
 
-		String homePage = "https://www.aaa.com/International/";
+		String homePage = "https://youngsoft.in/";
 		String url = "";
 		HttpURLConnection huc = null;
 		int respCode = 200;
@@ -50,6 +50,7 @@ public class Verify2 {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+			
 		}
 		driver.quit();
 	}

@@ -24,7 +24,7 @@ public class priceVerification {
 @Test(priority = 1,enabled=true)	
 //	Price Validation
 	public void Price() throws Throwable {
-		for (int i = 1; i <= 5; i++) {
+		for (int i = 1; i <= 6; i++) {
 			FileInputStream fis = new FileInputStream("./Data/Cost.xlsx");
 			Workbook wb = WorkbookFactory.create(fis);
 			Sheet sh = wb.getSheet("Sheet1");

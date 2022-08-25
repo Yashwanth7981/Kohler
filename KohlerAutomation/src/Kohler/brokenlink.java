@@ -17,7 +17,7 @@ public class brokenlink {
 
 	public static void main(String[] args) throws Throwable {
           
-		String homePage = "https://ptmantra.com/";
+		String homePage = "https://youngsoft.in/";
 		String url = "";
 		HttpURLConnection huc = null;
 		int respCode = 200;
