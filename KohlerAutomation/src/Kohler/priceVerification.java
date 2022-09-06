@@ -20,8 +20,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class priceVerification {
-@Test(priority = 1,enabled=true)	
+public class priceVerification{
+@Test
 //	Price Validation
 public static void main(String[] args) throws Throwable {
 		for (int i = 1; i <= 6; i++) {
@@ -48,15 +48,22 @@ public static void main(String[] args) throws Throwable {
 			List<WebElement> b = driver.findElements(By.xpath("//li[@class='active']"));
 			List<WebElement> b1 = driver
 					.findElements(By.xpath("//*[contains(text(),'Please try a different search')]"));
-
+			List<WebElement> b2 = driver
+					.findElements(By.xpath("//*[contains(text(),'This product has been discontinued.')]"));
 			if (b1.size() > 0) {
 				FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
 				r.createCell(3).setCellValue("Product Not Found");
 				wb.write(fos);
 				driver.quit();
-				
+			}
+			else if(b2.size()>0) {
+				FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
+				r.createCell(3).setCellValue("Product Discontinued");
+				wb.write(fos);
+				driver.quit();
 
-			} else if (b.size() > 0) {
+			} 
+			else if (b.size() > 0) {
 				JavascriptExecutor js = (JavascriptExecutor) driver;
 				js.executeScript("window.scrollBy(0,500)");
 				driver.findElement(By.xpath("//div[@class='koh-product-image']")).click();
