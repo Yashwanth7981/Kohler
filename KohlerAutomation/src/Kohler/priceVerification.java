@@ -23,7 +23,7 @@ import org.testng.annotations.Test;
 public class priceVerification {
 @Test(priority = 1,enabled=true)	
 //	Price Validation
-	public void Price() throws Throwable {
+public static void main(String[] args) throws Throwable {
 		for (int i = 1; i <= 6; i++) {
 			FileInputStream fis = new FileInputStream("./Data/Cost.xlsx");
 			Workbook wb = WorkbookFactory.create(fis);
