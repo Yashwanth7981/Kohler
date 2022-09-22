@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 public class Flags {
 @Test(priority=1,enabled=true)
-public void cost() {
+public void run() {
 	Reporter.log("Run",true);
 }
 @Test(priority=2,enabled=true)

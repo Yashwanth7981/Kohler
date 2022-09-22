@@ -17,11 +17,23 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 public class priceVerification{
 	@Test(priority=1,enabled=true)
+	public void verify() {
+		
+		System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+	    driver.get("http://kohler.co.in/");
+		String x=driver.getTitle();
+		Assert.assertEquals(x,"Kohler Faucets, Bathroom Sinks, Toilets, Showering | Kohler");	
+		Reporter.log("Verify",true);
+	}
 //	Price Validation
+	@Test(priority=2,enabled=false)
 public void pv() throws Throwable {
 		for (int i = 1; i <= 6; i++) {
 			FileInputStream fis = new FileInputStream("./Data/Cost.xlsx");
