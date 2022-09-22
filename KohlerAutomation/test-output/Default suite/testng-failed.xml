@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Kohler.pv2">
+      <class name="Kohler.priceVerificationTest">
         <methods>
-          <include name="Price"/>
+          <include name="f"/>
         </methods>
-      </class> <!-- Kohler.pv2 -->
+      </class> <!-- Kohler.priceVerificationTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
