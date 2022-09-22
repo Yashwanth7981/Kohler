@@ -30,7 +30,7 @@ public class priceVerification{
 	    driver.get("http://kohler.co.in/");
 		String x=driver.getTitle();
 		Assert.assertEquals(x,"Kohler Faucets, Bathroom Sinks, Toilets, Showering | Kohler");	
-//		Reporter.log("Verify",true);
+		Reporter.log("Verify",true);
 	}
 //	Price Validation
 	@Test(priority=2,enabled=false)
