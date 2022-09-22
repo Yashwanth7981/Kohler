@@ -19,7 +19,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-
 public class priceVerification{
 	@Test(priority=1,enabled=true)
 //	Price Validation
