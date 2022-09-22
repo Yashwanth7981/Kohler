@@ -5,12 +5,12 @@
       <![CDATA[Verify]]>
     </line>
   </reporter-output>
-  <suite started-at="2022-09-22T15:03:34 IST" name="Suite" finished-at="2022-09-22T15:03:45 IST" duration-ms="11105">
+  <suite started-at="2022-09-22T18:17:14 IST" name="Default suite" finished-at="2022-09-22T18:17:27 IST" duration-ms="12843">
     <groups>
     </groups>
-    <test started-at="2022-09-22T15:03:34 IST" name="Test" finished-at="2022-09-22T15:03:45 IST" duration-ms="11105">
+    <test started-at="2022-09-22T18:17:14 IST" name="Default test" finished-at="2022-09-22T18:17:27 IST" duration-ms="12843">
       <class name="Kohler.priceVerification">
-        <test-method signature="verify()[pri:1, instance:Kohler.priceVerification@d6e7bab]" started-at="2022-09-22T15:03:34 IST" name="verify" finished-at="2022-09-22T15:03:45 IST" duration-ms="11065" status="PASS">
+        <test-method signature="verify()[pri:1, instance:Kohler.priceVerification@d6e7bab]" started-at="2022-09-22T18:17:14 IST" name="verify" finished-at="2022-09-22T18:17:27 IST" duration-ms="12809" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Verify]]>
@@ -18,6 +18,6 @@
           </reporter-output>
         </test-method> <!-- verify -->
       </class> <!-- Kohler.priceVerification -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
