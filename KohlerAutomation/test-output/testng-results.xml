@@ -1,16 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
+    <line>
+      <![CDATA[Price Verify]]>
+    </line>
     <line>
       <![CDATA[Verify]]>
     </line>
   </reporter-output>
-  <suite started-at="2022-09-22T18:17:14 IST" name="Default suite" finished-at="2022-09-22T18:17:27 IST" duration-ms="12843">
+  <suite started-at="2022-09-23T14:17:44 IST" name="Suite" finished-at="2022-09-23T14:23:12 IST" duration-ms="328175">
     <groups>
     </groups>
-    <test started-at="2022-09-22T18:17:14 IST" name="Default test" finished-at="2022-09-22T18:17:27 IST" duration-ms="12843">
+    <test started-at="2022-09-23T14:17:44 IST" name="Test" finished-at="2022-09-23T14:23:12 IST" duration-ms="328175">
       <class name="Kohler.priceVerification">
-        <test-method signature="verify()[pri:1, instance:Kohler.priceVerification@d6e7bab]" started-at="2022-09-22T18:17:14 IST" name="verify" finished-at="2022-09-22T18:17:27 IST" duration-ms="12809" status="PASS">
+        <test-method signature="pv()[pri:1, instance:Kohler.priceVerification@d6e7bab]" started-at="2022-09-23T14:17:44 IST" name="pv" finished-at="2022-09-23T14:23:01 IST" duration-ms="317224" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Price Verify]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- pv -->
+        <test-method signature="verify()[pri:2, instance:Kohler.priceVerification@d6e7bab]" started-at="2022-09-23T14:23:01 IST" name="verify" finished-at="2022-09-23T14:23:12 IST" duration-ms="10866" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Verify]]>
@@ -18,6 +28,6 @@
           </reporter-output>
         </test-method> <!-- verify -->
       </class> <!-- Kohler.priceVerification -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

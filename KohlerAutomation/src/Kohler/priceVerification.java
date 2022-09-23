@@ -22,7 +22,7 @@ import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 public class priceVerification{
-	@Test(priority=1,enabled=true)
+	@Test(priority=2,enabled=true)
 	public void verify() {
 		
 		System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
@@ -33,7 +33,7 @@ public class priceVerification{
 		Reporter.log("Verify",true);
 	}
 //	Price Validation
-	@Test(priority=2,enabled=false)
+	@Test(priority=1,enabled=true)
 public void pv() throws Throwable {
 		for (int i = 1; i <= 6; i++) {
 			FileInputStream fis = new FileInputStream("./Data/Cost.xlsx");
@@ -219,5 +219,7 @@ public void pv() throws Throwable {
 			}
 
 		}
+		Reporter.log("Price Verify",true);
 	}
+	
 }
