@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-26T13:14:35 IST" name="Default suite" finished-at="2022-09-26T13:17:00 IST" duration-ms="144785">
+  <suite started-at="2022-09-26T13:21:29 IST" name="Default suite" finished-at="2022-09-26T13:23:57 IST" duration-ms="147899">
     <groups>
     </groups>
-    <test started-at="2022-09-26T13:14:35 IST" name="Default test" finished-at="2022-09-26T13:17:00 IST" duration-ms="144785">
+    <test started-at="2022-09-26T13:21:29 IST" name="Default test" finished-at="2022-09-26T13:23:57 IST" duration-ms="147899">
       <class name="Kohler.priceVerification1">
-        <test-method signature="pv()[pri:0, instance:Kohler.priceVerification1@3315d2d7]" started-at="2022-09-26T13:14:35 IST" name="pv" finished-at="2022-09-26T13:17:00 IST" duration-ms="144748" status="PASS">
+        <test-method signature="pv()[pri:0, instance:Kohler.priceVerification1@3315d2d7]" started-at="2022-09-26T13:21:29 IST" name="pv" finished-at="2022-09-26T13:23:57 IST" duration-ms="147858" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- pv -->
