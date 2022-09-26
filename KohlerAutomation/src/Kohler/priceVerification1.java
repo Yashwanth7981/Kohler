@@ -26,6 +26,7 @@ public class priceVerification1 {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://kohler.co.in");
 		driver.manage().window().maximize();
+		driver.findElement(By.xpath("//button[@id='truste-consent-required']")).click();
 		driver.findElement(By.xpath("//div[@class='c-koh-site-search koh-desktop-nav']/form/span/input[@type='text']"))
 				.sendKeys("15399T-B-BV" + Keys.ENTER);
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
