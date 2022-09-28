@@ -61,8 +61,7 @@ public class priceVerification1 {
 				r.createCell(3).setCellValue("Product Discontinued");
 				wb.write(fos);
 //				driver.quit();
-
-			} else if (b.size() > 0) {			
+			} else if (b.size() > 0) {
 				JavascriptExecutor js = (JavascriptExecutor) driver;
 				js.executeScript("window.scrollBy(0,500)");
 				driver.findElement(By.xpath("//div[@class='koh-product-image']")).click();
