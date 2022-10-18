@@ -16,7 +16,7 @@ public class Verify2 {
 
 	public static void main(String[] args) throws Throwable {
 
-		String homePage = "https://youngsoft.in/";
+		String homePage = "http://mytruadvantage.com/";
 		String url = "";
 		HttpURLConnection huc = null;
 		int respCode = 200;
@@ -37,7 +37,7 @@ public class Verify2 {
 			try {
 				huc = (HttpURLConnection) (new URL(url).openConnection());
 				huc.setRequestMethod("HEAD");
-				Thread.sleep(9000);
+				Thread.sleep(10000);
 				huc.connect();
 				respCode = huc.getResponseCode();
 				if (respCode >= 400) {
