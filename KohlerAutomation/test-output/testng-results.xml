@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-10-13T11:23:23 IST" name="Default suite" finished-at="2022-10-13T11:23:43 IST" duration-ms="20157">
+  <suite started-at="2022-12-08T17:04:50 IST" name="Default suite" finished-at="2022-12-08T17:07:22 IST" duration-ms="152183">
     <groups>
     </groups>
-    <test started-at="2022-10-13T11:23:23 IST" name="Default test" finished-at="2022-10-13T11:23:43 IST" duration-ms="20157">
-      <class name="Kohler.LinksCrawl">
-        <test-method signature="a()[pri:0, instance:Kohler.LinksCrawl@3315d2d7]" started-at="2022-10-13T11:23:23 IST" name="a" finished-at="2022-10-13T11:23:43 IST" duration-ms="20098" status="PASS">
+    <test started-at="2022-12-08T17:04:50 IST" name="Default test" finished-at="2022-12-08T17:07:22 IST" duration-ms="152183">
+      <class name="Kohler.priceVerification1">
+        <test-method signature="pv()[pri:0, instance:Kohler.priceVerification1@3315d2d7]" started-at="2022-12-08T17:04:50 IST" name="pv" finished-at="2022-12-08T17:07:22 IST" duration-ms="152134" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- a -->
-      </class> <!-- Kohler.LinksCrawl -->
+        </test-method> <!-- pv -->
+      </class> <!-- Kohler.priceVerification1 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -1,8 +1,14 @@
 package Kohler;
 
+import java.io.FileOutputStream;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -22,9 +28,7 @@ public class LinksCrawl {
 		List<WebElement> allLinks = driver.findElements(By.tagName("a"));
 		System.out.println("No of links are " + allLinks.size());
 		for (WebElement link : allLinks) {
-//			FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
-//			r.createCell(3).setCellValue(price);
-//			wb.write(fos);
+			
 			System.out.println(link.getText() + " - " + link.getAttribute("href"));
 		}
 	}
