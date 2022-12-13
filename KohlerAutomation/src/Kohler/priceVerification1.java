@@ -20,13 +20,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
 public class priceVerification1 {
+
 	@Test
 	public void pv() throws Throwable {
 		System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://kohler.co.in");
 		driver.manage().window().maximize();
-		driver.findElement(By.xpath("//button[@id='truste-consent-required']")).click();
 		driver.findElement(By.xpath("//div[@class='c-koh-site-search koh-desktop-nav']/form/span/input[@type='text']"))
 				.sendKeys("15399T-B-BV" + Keys.ENTER);
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -61,7 +61,8 @@ public class priceVerification1 {
 				r.createCell(3).setCellValue("Product Discontinued");
 				wb.write(fos);
 //				driver.quit();
-			} else if (b.size() > 0) {
+
+			} else if (b.size() > 0) {			
 				JavascriptExecutor js = (JavascriptExecutor) driver;
 				js.executeScript("window.scrollBy(0,500)");
 				driver.findElement(By.xpath("//div[@class='koh-product-image']")).click();
