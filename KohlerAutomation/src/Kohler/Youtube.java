@@ -15,7 +15,7 @@ public class Youtube {
 		driver.manage().window().maximize();
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//div[@id='search-input']//input")).click();
-		driver.findElement(By.xpath("//div[@id='search-input']//input")).sendKeys("Selenium"+Keys.ENTER);
+		driver.findElement(By.xpath("//div[@id='search-input']//input")).sendKeys("Justin Bieber Baby song"+Keys.ENTER);
 		Thread.sleep(5000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
      	js.executeScript("window.scrollBy(0,100)");	
