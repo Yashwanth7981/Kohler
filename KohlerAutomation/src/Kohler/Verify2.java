@@ -41,9 +41,9 @@ public class Verify2 {
 				huc.connect();
 				respCode = huc.getResponseCode();
 				if (respCode >= 400) {
-					System.out.println(url + "--" + " is a broken link");
+					System.out.println(url + "--" + " is the broken link");
 				} else {
-					System.out.println(url + "--" + " is a valid link");
+					System.out.println(url + "--" + " is the valid link");
 				}
 			} catch (MalformedURLException e) {    
 				e.printStackTrace();
