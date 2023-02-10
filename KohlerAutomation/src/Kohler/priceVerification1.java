@@ -17,12 +17,13 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.Test;
+//import org.testng.annotations.Test;
 
 public class priceVerification1 {
 
-	@Test
-	public void pv() throws Throwable {
+//	@Test
+//	public void pv() throws Throwable {
+	public static void main(String[] args) throws Throwable { 
 		System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://kohler.co.in");
