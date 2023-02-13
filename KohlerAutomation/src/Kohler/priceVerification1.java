@@ -34,7 +34,7 @@ public class priceVerification1 {
 		driver.findElement(By.xpath("//div[@class='c-koh-site-search koh-desktop-nav']/form/span/input[@type='text']"))
 				.sendKeys("15399T-B-BV" + Keys.ENTER);
 
-		for (int i = 1; i <= 8; i++) {
+		for (int i = 396; i <= 1643; i++) {
 			FileInputStream fis = new FileInputStream("./Data/Cost.xlsx");
 			Workbook wb = WorkbookFactory.create(fis);
 			Sheet sh = wb.getSheet("Sheet1");
@@ -156,7 +156,18 @@ public class priceVerification1 {
 					wb.write(fos);
 					driver.close();
 					driver.switchTo().window(parent);
-				} else if (excelValue.contains("HG1")) {
+				}  else if (excelValue.contains("BN")) {
+					driver.findElement(
+							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_BN?$SwatchSS$']"))
+							.click();
+					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+					FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
+					r.createCell(3).setCellValue(price);
+					wb.write(fos);
+					driver.close();
+					driver.switchTo().window(parent);
+				}
+				else if (excelValue.contains("HG1")) {
 					driver.findElement(
 							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_HG1?$SwatchSS$']"))
 							.click();
@@ -176,7 +187,19 @@ public class priceVerification1 {
 					wb.write(fos);
 					driver.close();
 					driver.switchTo().window(parent);
-				} else if (excelValue.contains("-0")) {
+				}
+				else if (excelValue.contains("VS")) {
+					driver.findElement(
+							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_VS?$SwatchSS$']"))
+							.click();
+					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+					FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
+					r.createCell(3).setCellValue(price);
+					wb.write(fos);
+					driver.close();
+					driver.switchTo().window(parent);
+
+				}else if (excelValue.contains("-0")) {
 					driver.findElement(
 							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_0?$SwatchSS$']"))
 							.click();
