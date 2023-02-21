@@ -32,7 +32,7 @@ public class Findproducts {
 			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 			driver.findElement(By.xpath("//div[@class='c-koh-site-search koh-desktop-nav']/form/span/input[@type='text']"))
 					.sendKeys("15399T-B-BV" + Keys.ENTER);
-		for (int i = 945; i <= 1644; i++) {
+		for (int i = 1; i <= 1644; i++) {
 			FileInputStream fis = new FileInputStream("./Data/Cost.xlsx");
 			Workbook wb = WorkbookFactory.create(fis);
 			Sheet sh = wb.getSheet("Sheet1");
