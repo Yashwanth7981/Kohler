@@ -46,8 +46,10 @@ public class Findproducts {
 					.sendKeys(excelValue + Keys.ENTER);
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
+//			List<WebElement> b = driver
+//					.findElements(By.xpath("//*[contains(text(),'Please try a different search')]"));
 			List<WebElement> b = driver
-					.findElements(By.xpath("//*[contains(text(),'Please try a different search')]"));
+					.findElements(By.xpath("//div[@class='koh-hero-container']/p"));
 			List<WebElement> b1 = driver.findElements(By.xpath("//li[@class='active']"));
 			List<WebElement> b2 = driver
 					.findElements(By.xpath("//*[contains(text(),'This product has been discontinued.')]"));
