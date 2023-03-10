@@ -26,7 +26,9 @@ public class priceVerification1 {
 	public static void main(String[] args) throws Throwable { 
 		System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
+		driver.manage().deleteAllCookies();
 		driver.get("https://kohler.co.in");
+		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
 		driver.findElement(By.xpath("//div[@class='c-koh-site-search koh-desktop-nav']/form/span/input[@type='text']"))
 				.sendKeys("15399T-B-BV" + Keys.ENTER);
@@ -34,10 +36,10 @@ public class priceVerification1 {
 		driver.findElement(By.xpath("//div[@class='c-koh-site-search koh-desktop-nav']/form/span/input[@type='text']"))
 				.sendKeys("15399T-B-BV" + Keys.ENTER);
 
-		for (int i = 396; i <= 1643; i++) {
+		for (int i = 789; i <= 953; i++) {
 			FileInputStream fis = new FileInputStream("./Data/Cost.xlsx");
 			Workbook wb = WorkbookFactory.create(fis);
-			Sheet sh = wb.getSheet("Sheet1");
+			Sheet sh = wb.getSheet("Sheet4");
 			Row r = sh.getRow(i);
 			Cell c = r.getCell(1);
 			String excelValue = c.getStringCellValue();
@@ -48,10 +50,10 @@ public class priceVerification1 {
 					.sendKeys(excelValue + Keys.ENTER);
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 			List<WebElement> b = driver.findElements(By.xpath("//li[@class='active']"));
-			List<WebElement> b1 = driver
-					.findElements(By.xpath("//div[@class='koh-hero-container']/p"));
 //			List<WebElement> b1 = driver
-//					.findElements(By.xpath("//*[contains(text(),'Please try a different search')]"));
+//					.findElements(By.xpath("//div[@class='koh-hero-container']/p"));
+			List<WebElement> b1 = driver
+					.findElements(By.xpath("//*[contains(text(),'Please try a different search')]"));
 			List<WebElement> b2 = driver
 					.findElements(By.xpath("//*[contains(text(),'This product has been discontinued.')]"));
 			if (b1.size() > 0) {
@@ -97,8 +99,17 @@ public class priceVerification1 {
 					wb.write(fos);
 					driver.close();
 					driver.switchTo().window(parent);
-
-				} else if (excelValue.contains("RGD")) {
+			} else if (excelValue.contains("DGS")) {
+				driver.findElement(
+						By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_DGS?$SwatchSS$']"))
+						.click();
+				String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+				FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
+				r.createCell(3).setCellValue(price);
+				wb.write(fos);
+				driver.close();
+				driver.switchTo().window(parent);
+			} else if (excelValue.contains("RGD")) {
 					driver.findElement(
 							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_RGD?$SwatchSS$']"))
 							.click();
@@ -158,7 +169,18 @@ public class priceVerification1 {
 					wb.write(fos);
 					driver.close();
 					driver.switchTo().window(parent);
-				}  else if (excelValue.contains("BN")) {
+				}
+				else if (excelValue.contains("BLL")) {
+					driver.findElement(
+							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_BLL?$SwatchSS$']"))
+							.click();
+					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+					FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
+					r.createCell(3).setCellValue(price);
+					wb.write(fos);
+					driver.close();
+					driver.switchTo().window(parent);
+				} else if (excelValue.contains("BN")) {
 					driver.findElement(
 							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_BN?$SwatchSS$']"))
 							.click();
