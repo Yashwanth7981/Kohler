@@ -36,7 +36,7 @@ public class priceVerification1 {
 		driver.findElement(By.xpath("//div[@class='c-koh-site-search koh-desktop-nav']/form/span/input[@type='text']"))
 				.sendKeys("15399T-B-BV" + Keys.ENTER);
 
-		for (int i = 789; i <= 953; i++) {
+		for (int i = 1; i <= 5; i++) {
 			FileInputStream fis = new FileInputStream("./Data/Cost.xlsx");
 			Workbook wb = WorkbookFactory.create(fis);
 			Sheet sh = wb.getSheet("Sheet4");
