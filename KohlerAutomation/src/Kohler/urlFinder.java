@@ -19,7 +19,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 //import org.testng.annotations.Test;
 
-public class priceVerification1 {
+public class urlFinder {
 
 //	@Test
 //	public void pv() throws Throwable {
@@ -36,10 +36,10 @@ public class priceVerification1 {
 		driver.findElement(By.xpath("//div[@class='c-koh-site-search koh-desktop-nav']/form/span/input[@type='text']"))
 				.sendKeys("15399T-B-BV" + Keys.ENTER);
 
-		for (int i = 1; i <= 110; i++) {
+		for (int i = 45; i <= 337; i++) {
 			FileInputStream fis = new FileInputStream("./Data/Cost.xlsx");
 			Workbook wb = WorkbookFactory.create(fis);
-			Sheet sh = wb.getSheet("Sheet5");
+			Sheet sh = wb.getSheet("Sheet6");
 			Row r = sh.getRow(i);
 			Cell c = r.getCell(1);
 			String excelValue = c.getStringCellValue();
@@ -78,147 +78,185 @@ public class priceVerification1 {
 				driver.switchTo().window(parent);
 				driver.switchTo().window(child);
 //			-------------------------------------------------------------------
-				if (excelValue.contains("BL")) {
+				if (excelValue.contains("-BL")) {
 					driver.findElement(
 							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_BL?$SwatchSS$']"))
 							.click();
-					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+//					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+					String ProdUrl = driver.getCurrentUrl();
 					FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
-					r.createCell(3).setCellValue(price);
+					r.createCell(3).setCellValue(ProdUrl);
 					wb.write(fos);
 					driver.close();
 					driver.switchTo().window(parent);
 
-				} else if (excelValue.contains("BV")) {
+				} else if (excelValue.contains("-BV")) {
 					driver.findElement(
 							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_BV?$SwatchSS$']"))
 							.click();
-					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+//					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+					String ProdUrl = driver.getCurrentUrl();
 					FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
-					r.createCell(3).setCellValue(price);
+					r.createCell(3).setCellValue(ProdUrl);
 					wb.write(fos);
 					driver.close();
 					driver.switchTo().window(parent);
-			} else if (excelValue.contains("DGS")) {
+			} else if (excelValue.contains("-DGS")) {
 				driver.findElement(
 						By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_DGS?$SwatchSS$']"))
 						.click();
-				String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+//				String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+				String ProdUrl = driver.getCurrentUrl();
 				FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
-				r.createCell(3).setCellValue(price);
+				r.createCell(3).setCellValue(ProdUrl);
 				wb.write(fos);
 				driver.close();
 				driver.switchTo().window(parent);
-			} else if (excelValue.contains("RGD")) {
+			} else if (excelValue.contains("-RGD")) {
 					driver.findElement(
 							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_RGD?$SwatchSS$']"))
 							.click();
-					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+//					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+					String ProdUrl = driver.getCurrentUrl();
 					FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
-					r.createCell(3).setCellValue(price);
+					r.createCell(3).setCellValue(ProdUrl);
 					wb.write(fos);
 					driver.close();
 					driver.switchTo().window(parent);
-				} else if (excelValue.contains("AF")) {
+				} else if (excelValue.contains("-AF")) {
 					driver.findElement(
 							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_AF?$SwatchSS$']"))
 							.click();
-					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+//					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+					String ProdUrl = driver.getCurrentUrl();
 					FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
-					r.createCell(3).setCellValue(price);
+					r.createCell(3).setCellValue(ProdUrl);
 					wb.write(fos);
 					driver.close();
 					driver.switchTo().window(parent);
-				} else if (excelValue.contains("CP")) {
+				} else if (excelValue.contains("-CP")) {
 					driver.findElement(
 							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_CP?$SwatchSS$']"))
 							.click();
-					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+//					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+					String ProdUrl = driver.getCurrentUrl();
 					FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
-					r.createCell(3).setCellValue(price);
+					r.createCell(3).setCellValue(ProdUrl);
 					wb.write(fos);
 					driver.close();
 					driver.switchTo().window(parent);
-				} else if (excelValue.contains("NA")) {
+				} else if (excelValue.contains("-NA")) {
 					driver.findElement(
 							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_NA?$SwatchSS$']"))
 							.click();
-					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+//					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+					String ProdUrl = driver.getCurrentUrl();
 					FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
-					r.createCell(3).setCellValue(price);
+					r.createCell(3).setCellValue(ProdUrl);
 					wb.write(fos);
 					driver.close();
 					driver.switchTo().window(parent);
-				} else if (excelValue.contains("SHP")) {
+				} else if (excelValue.contains("-SHP")) {
 					driver.findElement(
 							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_SHP?$SwatchSS$']"))
 							.click();
-					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+//					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+					String ProdUrl = driver.getCurrentUrl();
 					FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
-					r.createCell(3).setCellValue(price);
+					r.createCell(3).setCellValue(ProdUrl);
 					wb.write(fos);
 					driver.close();
 					driver.switchTo().window(parent);
-				} else if (excelValue.contains("BGL")) {
+				} else if (excelValue.contains("-BGL")) {
 					driver.findElement(
 							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_BGL?$SwatchSS$']"))
 							.click();
-					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+//					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+					String ProdUrl = driver.getCurrentUrl();
 					FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
-					r.createCell(3).setCellValue(price);
+					r.createCell(3).setCellValue(ProdUrl);
 					wb.write(fos);
 					driver.close();
 					driver.switchTo().window(parent);
 				}
-				else if (excelValue.contains("BLL")) {
+				else if (excelValue.contains("-BLL")) {
 					driver.findElement(
 							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_BLL?$SwatchSS$']"))
 							.click();
-					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+//					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+					String ProdUrl = driver.getCurrentUrl();
 					FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
-					r.createCell(3).setCellValue(price);
+					r.createCell(3).setCellValue(ProdUrl);
 					wb.write(fos);
 					driver.close();
 					driver.switchTo().window(parent);
-				} else if (excelValue.contains("BN")) {
+				} else if (excelValue.contains("-BN")) {
 					driver.findElement(
 							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_BN?$SwatchSS$']"))
 							.click();
-					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+//					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+					String ProdUrl = driver.getCurrentUrl();
 					FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
-					r.createCell(3).setCellValue(price);
+					r.createCell(3).setCellValue(ProdUrl);
 					wb.write(fos);
 					driver.close();
 					driver.switchTo().window(parent);
 				}
-				else if (excelValue.contains("HG1")) {
+				else if (excelValue.contains("-HG1")) {
 					driver.findElement(
 							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_HG1?$SwatchSS$']"))
 							.click();
-					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+//					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+					String ProdUrl = driver.getCurrentUrl();
 					FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
-					r.createCell(3).setCellValue(price);
+					r.createCell(3).setCellValue(ProdUrl);
 					wb.write(fos);
 					driver.close();
 					driver.switchTo().window(parent);
-				} else if (excelValue.contains("HP1")) {
+				} 
+				else if (excelValue.contains("-MWF")) {
 					driver.findElement(
-							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_HP1?$SwatchSS$']"))
+							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_HG1?$SwatchSS$']"))
 							.click();
-					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+//					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+					String ProdUrl = driver.getCurrentUrl();
 					FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
-					r.createCell(3).setCellValue(price);
+					r.createCell(3).setCellValue(ProdUrl);
 					wb.write(fos);
 					driver.close();
 					driver.switchTo().window(parent);
 				}
-				else if (excelValue.contains("VS")) {
+				else if (excelValue.contains("-PSH")) {
+					driver.findElement(
+							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_HG1?$SwatchSS$']"))
+							.click();
+//					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+					String ProdUrl = driver.getCurrentUrl();
+					FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
+					r.createCell(3).setCellValue(ProdUrl);
+					wb.write(fos);
+					driver.close();
+					driver.switchTo().window(parent);
+				}else if (excelValue.contains("-HP1")) {
+					driver.findElement(
+							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_HP1?$SwatchSS$']"))
+							.click();
+//					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+					String ProdUrl = driver.getCurrentUrl();
+					FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
+					r.createCell(3).setCellValue(ProdUrl);
+					wb.write(fos);
+					driver.close();
+					driver.switchTo().window(parent);
+				}
+				else if (excelValue.contains("-VS")) {
 					driver.findElement(
 							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_VS?$SwatchSS$']"))
 							.click();
-					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+//					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+					String ProdUrl = driver.getCurrentUrl();
 					FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
-					r.createCell(3).setCellValue(price);
+					r.createCell(3).setCellValue(ProdUrl);
 					wb.write(fos);
 					driver.close();
 					driver.switchTo().window(parent);
@@ -227,9 +265,10 @@ public class priceVerification1 {
 					driver.findElement(
 							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_0?$SwatchSS$']"))
 							.click();
-					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+//					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+					String ProdUrl = driver.getCurrentUrl();
 					FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
-					r.createCell(3).setCellValue(price);
+					r.createCell(3).setCellValue(ProdUrl);
 					wb.write(fos);
 					driver.close();
 					driver.switchTo().window(parent);
@@ -237,9 +276,10 @@ public class priceVerification1 {
 					driver.findElement(
 							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_7?$SwatchSS$']"))
 							.click();
-					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+//					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+					String ProdUrl = driver.getCurrentUrl();
 					FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
-					r.createCell(3).setCellValue(price);
+					r.createCell(3).setCellValue(ProdUrl);
 					wb.write(fos);
 					driver.close();
 					driver.switchTo().window(parent);
@@ -251,11 +291,12 @@ public class priceVerification1 {
 				}
 
 			} else {
-				String a1 = driver
-						.findElement(By.xpath("//div[@class='koh-product-skus-colors']//ul//span[@class='value']"))
-						.getText();
+//				String a1 = driver
+//						.findElement(By.xpath("//div[@class='koh-product-skus-colors']//ul//span[@class='value']"))
+//						.getText();
+				String ProdUrl = driver.getCurrentUrl();
 				FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
-				r.createCell(3).setCellValue(a1);
+				r.createCell(3).setCellValue(ProdUrl);
 				wb.write(fos);
 //				driver.quit();
 			}
