@@ -36,7 +36,7 @@ public class urlFinder {
 		driver.findElement(By.xpath("//div[@class='c-koh-site-search koh-desktop-nav']/form/span/input[@type='text']"))
 				.sendKeys("15399T-B-BV" + Keys.ENTER);
 
-		for (int i = 45; i <= 337; i++) {
+		for (int i = 324; i <= 337; i++) {
 			FileInputStream fis = new FileInputStream("./Data/Cost.xlsx");
 			Workbook wb = WorkbookFactory.create(fis);
 			Sheet sh = wb.getSheet("Sheet6");
@@ -216,7 +216,7 @@ public class urlFinder {
 				} 
 				else if (excelValue.contains("-MWF")) {
 					driver.findElement(
-							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_HG1?$SwatchSS$']"))
+							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_MWF?$SwatchSS$']"))
 							.click();
 //					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
 					String ProdUrl = driver.getCurrentUrl();
@@ -228,7 +228,7 @@ public class urlFinder {
 				}
 				else if (excelValue.contains("-PSH")) {
 					driver.findElement(
-							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_HG1?$SwatchSS$']"))
+							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_PSH?$SwatchSS$']"))
 							.click();
 //					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
 					String ProdUrl = driver.getCurrentUrl();
@@ -283,7 +283,19 @@ public class urlFinder {
 					wb.write(fos);
 					driver.close();
 					driver.switchTo().window(parent);
-				} else {
+				}
+				else if (excelValue.contains("-K4")) {
+					driver.findElement(
+							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_K4?$SwatchSS$']"))
+							.click();
+//					String price = driver.findElement(By.xpath("//span[@class='value']")).getText();
+					String ProdUrl = driver.getCurrentUrl();
+					FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
+					r.createCell(3).setCellValue(ProdUrl);
+					wb.write(fos);
+					driver.close();
+					driver.switchTo().window(parent);
+				}else {
 					FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
 					r.createCell(3).setCellValue("No Colour Match Found");
 					wb.write(fos);
