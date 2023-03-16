@@ -16,7 +16,7 @@ public class Verify2 {
 
 	public static void main(String[] args) throws Throwable {
 
-		String homePage = "http://mytruadvantage.com/";
+		String homePage = "https://h2hsolutions.com";
 		String url = "";
 		HttpURLConnection huc = null;
 		int respCode = 200;
