@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,10 +18,10 @@ public class contentOfProducts {
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
 		driver.findElement(By.xpath("//div[@class='c-koh-site-search koh-desktop-nav']/form/span/input[@type='text']"))
-				.sendKeys("5401IN-0" + Keys.ENTER);
+				.sendKeys("98930X-1-0" + Keys.ENTER);
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		driver.findElement(By.xpath("//div[@class='c-koh-site-search koh-desktop-nav']/form/span/input[@type='text']"))
-				.sendKeys("31458IN-0" + Keys.ENTER);
+				.sendKeys("11341IN-1-0" + Keys.ENTER);
 		String ComName = driver.findElement(By.xpath("//div[@class='koh-product-name']")).getText();
 		System.out.println(ComName);
 		String ShortDes = driver.findElement(By.xpath("//div[@class='koh-product-short-description']")).getText();
@@ -41,14 +40,20 @@ public class contentOfProducts {
 			System.out.println("No Long Description Found");
 		}
 
-//      JavascriptExecutor js = (JavascriptExecutor) driver;
-//     	js.executeScript("window.scrollBy(0,300)");	
-		List<WebElement> b1 = driver.findElements(By.xpath("//span[@class='koh-product-col-title']"));
+		List<WebElement> b1 = driver.findElements(By.xpath("//*[contains(text(),'Collection:')]"));
 		if (b1.size() > 0) {
 			String Collection = driver.findElement(By.xpath("//span[@class='koh-product-col-description']")).getText();
 			System.out.println(Collection);
 		} else {
 			System.out.println("No Collection Found");
+		}
+		List<WebElement> b2 = driver.findElements(By.xpath("//*[contains(text(),'Installation:')]"));
+		if(b2.size()>0) {
+			String Installation =  driver.findElement(By.xpath("//div[@class='koh-product-specs-other']/span[4]")).getText();
+			System.out.println(Installation);
+		}
+		else {
+			System.out.println("No Installation Found");
 		}
 	}
 }
