@@ -21,17 +21,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Findproducts {
 
-	
-		public static void main(String[] args) throws Throwable { 
-			System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
-			WebDriver driver = new ChromeDriver();
-			driver.get("https://kohler.co.in");
-			driver.manage().window().maximize();
-			driver.findElement(By.xpath("//div[@class='c-koh-site-search koh-desktop-nav']/form/span/input[@type='text']"))
-					.sendKeys("15399T-B-BV" + Keys.ENTER);
-			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-			driver.findElement(By.xpath("//div[@class='c-koh-site-search koh-desktop-nav']/form/span/input[@type='text']"))
-					.sendKeys("15399T-B-BV" + Keys.ENTER);
+	public static void main(String[] args) throws Throwable {
+		System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://kohler.co.in");
+		driver.manage().window().maximize();
+		driver.findElement(By.xpath("//div[@class='c-koh-site-search koh-desktop-nav']/form/span/input[@type='text']"))
+				.sendKeys("15399T-B-BV" + Keys.ENTER);
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		driver.findElement(By.xpath("//div[@class='c-koh-site-search koh-desktop-nav']/form/span/input[@type='text']"))
+				.sendKeys("15399T-B-BV" + Keys.ENTER);
 		for (int i = 254; i <= 290; i++) {
 			FileInputStream fis = new FileInputStream("./Data/Cost.xlsx");
 			Workbook wb = WorkbookFactory.create(fis);
@@ -48,25 +47,23 @@ public class Findproducts {
 
 //			List<WebElement> b = driver
 //					.findElements(By.xpath("//*[contains(text(),'Please try a different search')]"));
-			List<WebElement> b = driver
-					.findElements(By.xpath("//div[@class='koh-hero-container']/p"));
+			List<WebElement> b = driver.findElements(By.xpath("//div[@class='koh-hero-container']/p"));
 			List<WebElement> b1 = driver.findElements(By.xpath("//li[@class='active']"));
 			List<WebElement> b2 = driver
 					.findElements(By.xpath("//*[contains(text(),'This product has been discontinued.')]"));
-
 
 			if (b.size() > 0) {
 				FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
 				r.createCell(3).setCellValue("Product Not Found");
 				wb.write(fos);
-			
-			} 
+
+			}
 			if (b2.size() > 0) {
 				FileOutputStream fos = new FileOutputStream("./Data/Cost.xlsx");
 				r.createCell(3).setCellValue("Discontinued");
 				wb.write(fos);
-			
-			}else if (b1.size() > 0) {			
+
+			} else if (b1.size() > 0) {
 				JavascriptExecutor js = (JavascriptExecutor) driver;
 				js.executeScript("window.scrollBy(0,500)");
 				driver.findElement(By.xpath("//div[@class='koh-product-image']")).click();
@@ -109,8 +106,7 @@ public class Findproducts {
 					wb.write(fos);
 					driver.close();
 					driver.switchTo().window(parent);
-				}
-				else if (excelValue.contains("BLL")) {
+				} else if (excelValue.contains("BLL")) {
 					driver.findElement(
 							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_BLL?$SwatchSS$']"))
 							.click();
@@ -120,8 +116,7 @@ public class Findproducts {
 					wb.write(fos);
 					driver.close();
 					driver.switchTo().window(parent);
-				}
-				else if (excelValue.contains("BGL")) {
+				} else if (excelValue.contains("BGL")) {
 					driver.findElement(
 							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_BGL?$SwatchSS$']"))
 							.click();
@@ -131,7 +126,7 @@ public class Findproducts {
 					wb.write(fos);
 					driver.close();
 					driver.switchTo().window(parent);
-				}else if (excelValue.contains("AF")) {
+				} else if (excelValue.contains("AF")) {
 					driver.findElement(
 							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_AF?$SwatchSS$']"))
 							.click();
@@ -181,7 +176,7 @@ public class Findproducts {
 					wb.write(fos);
 					driver.close();
 					driver.switchTo().window(parent);
-				}  else if (excelValue.contains("BN")) {
+				} else if (excelValue.contains("BN")) {
 					driver.findElement(
 							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_BN?$SwatchSS$']"))
 							.click();
@@ -191,8 +186,7 @@ public class Findproducts {
 					wb.write(fos);
 					driver.close();
 					driver.switchTo().window(parent);
-				}
-				else if (excelValue.contains("HG1")) {
+				} else if (excelValue.contains("HG1")) {
 					driver.findElement(
 							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_HG1?$SwatchSS$']"))
 							.click();
@@ -212,8 +206,7 @@ public class Findproducts {
 					wb.write(fos);
 					driver.close();
 					driver.switchTo().window(parent);
-				}
-				else if (excelValue.contains("VS")) {
+				} else if (excelValue.contains("VS")) {
 					driver.findElement(
 							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_VS?$SwatchSS$']"))
 							.click();
@@ -224,8 +217,7 @@ public class Findproducts {
 					driver.close();
 					driver.switchTo().window(parent);
 
-				}
-				else if (excelValue.contains("DGS")) {
+				} else if (excelValue.contains("DGS")) {
 					driver.findElement(
 							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_DGS?$SwatchSS$']"))
 							.click();
@@ -236,7 +228,7 @@ public class Findproducts {
 					driver.close();
 					driver.switchTo().window(parent);
 
-				}else if (excelValue.contains("-0")) {
+				} else if (excelValue.contains("-0")) {
 					driver.findElement(
 							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_0?$SwatchSS$']"))
 							.click();
@@ -256,8 +248,7 @@ public class Findproducts {
 					wb.write(fos);
 					driver.close();
 					driver.switchTo().window(parent);
-				} 
-				else if (excelValue.contains("K4")) {
+				} else if (excelValue.contains("K4")) {
 					driver.findElement(
 							By.xpath("//img[@src='//s7g10.scene7.com/is/image/kohlerindia/swatch_K4?$SwatchSS$']"))
 							.click();
@@ -274,7 +265,7 @@ public class Findproducts {
 //					driver.quit();
 				}
 
-			} 
+			}
 		}
 	}
 }
