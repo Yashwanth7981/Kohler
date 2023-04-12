@@ -1,6 +1,7 @@
 package TestNG1;
 
 import org.testng.Reporter;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 public class Flags {
@@ -12,6 +13,7 @@ public void run() {
 public void bun() {
 	Reporter.log("Bun",true);
 }
+//@AfterTest
 @Test(priority=3,enabled=true)
 public void gun() {
 	Reporter.log("Gun",true);

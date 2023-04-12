@@ -32,10 +32,10 @@ public class Findproducts {
 			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 			driver.findElement(By.xpath("//div[@class='c-koh-site-search koh-desktop-nav']/form/span/input[@type='text']"))
 					.sendKeys("15399T-B-BV" + Keys.ENTER);
-		for (int i = 362; i <= 400; i++) {
+		for (int i = 254; i <= 290; i++) {
 			FileInputStream fis = new FileInputStream("./Data/Cost.xlsx");
 			Workbook wb = WorkbookFactory.create(fis);
-			Sheet sh = wb.getSheet("Sheet3");
+			Sheet sh = wb.getSheet("Sheet2");
 			Row r = sh.getRow(i);
 			Cell c = r.getCell(1);
 			String excelValue = c.getStringCellValue();

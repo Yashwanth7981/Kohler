@@ -11,8 +11,7 @@ public class BrokenLinksChecker {
     public static void main(String[] args) {
 		System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-
-        String baseUrl = "https://youngsoft.in/";
+        String baseUrl = "https://dmntest.com/";
         driver.get(baseUrl);
        driver.manage().window().maximize();
         List<WebElement> links = driver.findElements(By.tagName("a"));
@@ -29,11 +28,13 @@ public class BrokenLinksChecker {
                     if (statusCode >= 400) {
                         System.out.println(url + " is a broken link");
                     } else {
-//                        System.out.println(url + " is a valid link");
+                        System.out.println(url + " is a valid link");
                     }
                 } catch (Exception e) {
                     System.out.println(url + " is a broken link");
                 }
+
+                
             }
         }
 
