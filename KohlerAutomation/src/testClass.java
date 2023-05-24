@@ -8,7 +8,7 @@ public class testClass {
 		System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.facebook.com/");
-		System.out.println("Facebook Opened Successful");
+		System.out.println("Facebook Opened Successfully");
 		
 	}
 
