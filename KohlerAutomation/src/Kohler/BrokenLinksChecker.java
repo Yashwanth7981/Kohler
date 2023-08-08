@@ -11,7 +11,7 @@ public class BrokenLinksChecker {
     public static void main(String[] args) {
 		System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-        String baseUrl = "https://dmntest.com/";
+        String baseUrl = "https://youngsoft.com/";
         driver.get(baseUrl);
        driver.manage().window().maximize();
         List<WebElement> links = driver.findElements(By.tagName("a"));
